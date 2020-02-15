@@ -1,0 +1,633 @@
+BackdropNode {
+inputs 0
+name BackdropNode71
+tile_color 0x888888ff
+label "<center>MMed w Projection\n(always on denoised plate)"
+note_font_size 42
+selected true
+xpos 9613
+ypos -784
+bdwidth 2115
+bdheight 3104
+}
+BackdropNode {
+inputs 0
+name BackdropNode68
+tile_color 0x555555ff
+label "<center>Clean Patch"
+note_font_size 42
+selected true
+xpos 10091
+ypos -376
+bdwidth 279
+bdheight 464
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode69
+tile_color 0x555555ff
+label "<center>Patch Alpha"
+note_font_size 42
+selected true
+xpos 9913
+ypos 107
+bdwidth 414
+bdheight 266
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode70
+tile_color 0x555555ff
+label "<center>Movement\non patch area\nto be removed\n(optional)"
+note_font_size 42
+selected true
+xpos 10577
+ypos 1105
+bdwidth 406
+bdheight 526
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode72
+tile_color 0x555555ff
+label "<center>MM\nprojection"
+note_font_size 42
+selected true
+xpos 9896
+ypos 394
+bdwidth 449
+bdheight 459
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode73
+tile_color 0x555555ff
+label "<center>Stabilized\nprojection"
+note_font_size 42
+selected true
+xpos 10116
+ypos 1714
+bdwidth 449
+bdheight 459
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode74
+tile_color 0x555555ff
+label "<center>Use if there`re\nmultiple projections needed"
+note_font_size 42
+selected true
+xpos 11123
+ypos 83
+bdwidth 414
+bdheight 266
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode75
+tile_color 0x555555ff
+label "<center>Remove\nLens Distortion"
+note_font_size 42
+selected true
+xpos 10531
+ypos -568
+bdwidth 279
+bdheight 464
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode76
+tile_color 0x555555ff
+label "<center>Restore\nLens Distortion"
+note_font_size 42
+selected true
+xpos 9867
+ypos 911
+bdwidth 507
+bdheight 290
+z_order 1
+}
+Camera2 {
+inputs 0
+name Camera3
+selected true
+xpos 10200
+ypos 1842
+}
+set Nf6757880 [stack 0]
+FrameHold {
+first_frame 1121
+name FrameHold15
+selected true
+xpos 10190
+ypos 2024
+}
+push $Nf6757880
+Roto {
+inputs 0
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 0}
+    {t x44700000 x44070000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}}}}}
+toolbox {createBezier {
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+name Roto13
+selected true
+xpos 10740
+ypos 1424
+disable true
+}
+Blur {
+size 1.5
+name Blur22
+label "Size: \[value size]"
+selected true
+xpos 10740
+ypos 1489
+disable true
+}
+Expression {
+inputs 0
+expr0 (x+0.5)/width
+expr1 (y+0.5)/height
+name Expression2
+label "STMap\nDistortion"
+selected true
+xpos 9970
+ypos 1105
+}
+Camera2 {
+inputs 0
+name Camera2
+selected true
+xpos 9980
+ypos 714
+}
+set Nf6c91c00 [stack 0]
+push $Nf6c91c00
+FrameHold {
+first_frame 1121
+name FrameHold14
+selected true
+xpos 9970
+ypos 560
+}
+Roto {
+inputs 0
+output alpha
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44700000 x44070000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px x448c2000
+        {x4180ba40 x40917400}
+        {x442c62e7 x44503746}
+        {xc1b7d840 xc0cfbb80}
+        {xc1c40000 x40000000}
+        {x44293fff x44444000}
+        {x41c40000 xc0000000}
+        {xc2240000 xc0400000}
+        {x444d1fff x44446000}
+        {x42240000 x40400000}
+        {xc0900000 xc0f00000}
+        {x44781ffe x44464000}
+        {x40900000 x40f00000}
+        {x40c00000 xc1300000}
+        {x44785743 x44500001}
+        {xc0c00000 x41300000}
+        {x41900000 0}
+        {x444d9745 x44515175}
+        {xc1900000 0}}}     idem}
+     {tx x448c2000 x44508000 x444b8aab}
+     {a osw x41200000 osf 0 str 1 spx x44700000 spy x44070000 sb 1 ltn x448c2000 ltm x448c2000 tt x40800000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 1121
+lifetime_end 1121
+motionblur_shutter_offset_type centred
+source_black_outside true
+name Roto1
+selected true
+xpos 9970
+ypos 224
+}
+Blur {
+size 3
+name Blur3
+label "Size: \[value size]"
+selected true
+xpos 9970
+ypos 289
+}
+Expression {
+inputs 0
+expr0 (x+0.5)/width
+expr1 (y+0.5)/height
+name Expression3
+label "STMap\nUndistort"
+selected true
+xpos 10630
+ypos -383
+}
+push $cut_paste_input
+Dot {
+name Dot11
+selected true
+xpos 11104
+ypos -222
+}
+set Nf6c91500 [stack 0]
+STMap {
+inputs 2
+name STMap1
+selected true
+xpos 10630
+ypos -232
+}
+FrameHold {
+first_frame 1121
+name FrameHold11
+selected true
+xpos 10190
+ypos -232
+}
+RotoPaint {
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44700000 x44070000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {cubiccurve Clone2 512 catmullrom
+     {cc
+      {f 2080}
+      {px x448c2000
+       {x4468c000 x444a0000 x3e85a168}
+       {x44654000 x444a6000 x3e85a168}
+       {x44614000 x444ae000 x3e882209}
+       {x445ca000 x444b6000 x3e8ba2e9}
+       {x4458c000 x444ba000 x3e382e0c}}}
+     {tx x448c2000 x4460eccd x444ad99a}
+     {a ro 0 go 0 bo 0 ao 0 bs x427a0000 bu 1 src 1 stx xc2380000 sty xc1e40000 str 1 spx x44700000 spy x44070000 sb 1 ltn x448c2000 ltm x448c2000 ltt x40000000 tt x41980000}}
+    {cubiccurve Clone1 512 catmullrom
+     {cc
+      {f 2080}
+      {px x448c2000
+       {x4428a000 x444ac000 x3e703c0f}
+       {x44276000 x444ac000 x3e6338ce}
+       {x44242000 x444aa000 x3e8aa2a9}
+       {x44214000 x444aa000 x3ed8b62e}
+       {x44262000 x444b0000 x3f0ce339}
+       {x442c2000 x444b6000 x3f14e539}
+       {x442e0000 x444b8000 x3f1725c9}
+       {x44396000 x444be000 x3f22689a}
+       {x444d4000 x444be000 x3f2d6b5b}
+       {x44634000 x444be000 x3f336cdb}
+       {x44740000 x444c6000 x3f372dcb}
+       {x44764000 x444c8000 x3f376ddb}
+       {x447d4000 x444ce000 x3f382e0c}
+       {x44784000 x444d4000 x3f39ee7c}
+       {x44696000 x444d4000 x3f39ae6c}
+       {x44664000 x444d2000 x3f396e5c}
+       {x4450c000 x444c0000 x3f392e4c}
+       {x44364000 x4449c000 x3f38ee3c}
+       {x44268000 x44484000 x3f39ee7c}
+       {x44250000 x44482000 x3f39ae6c}
+       {x44228000 x44480000 x3f39ae6c}
+       {x44306000 x4449a000 x3f396e5c}
+       {x44492000 x444b4000 x3f39ae6c}
+       {x444dc000 x444b6000 x3f392e4c}
+       {x4468c000 x444ba000 x3f39ee7c}
+       {x447ee000 x444b6000 x3f39ee7c}
+       {x4480f000 x444b6000 x3f3baeec}
+       {x44732000 x444b6000 x3f3baeec}
+       {x445b4000 x444ba000 x3f3b2ecc}
+       {x4436a000 x444a4000 x3f3baeec}
+       {x441fe000 x4448a000 x3f3b6edc}
+       {x44190000 x44488000 x3f3cef3c}
+       {x4428e000 x444a4000 x3f3beefc}
+       {x4441e000 x444be000 x3f3caf2c}
+       {x445e2000 x444cc000 x3f3cef3c}
+       {x447d6000 x444ca000 x3f3e2f8c}
+       {x44839000 x444c6000 x3f3e6f9c}
+       {x447f4000 x444c2000 x3f3f6fdc}
+       {x447c8000 x444c2000 x3f3f6fdc}
+       {x44620000 x444b6000 x3f3f6fdc}
+       {x4448e000 x444a0000 x3f3feffc}
+       {x4431e000 x44476000 x3f3f6fdc}
+       {x44270000 x4445c000 x3f3feffc}
+       {x44232000 x4444c000 x3f3feffc}
+       {x442ae000 x4444c000 x3f3def7c}
+       {x4440a000 x44466000 x3f3d6f5c}
+       {x4444e000 x4446c000 x3f3e2f8c}
+       {x445ec000 x4448a000 x3f3eefbc}
+       {x4474a000 x444a4000 x3f3f6fdc}
+       {x4478e000 x444a8000 x3f3feffc}
+       {x446b2000 x444a2000 x3f40300c}
+       {x44500000 x44488000 x3f40300c}
+       {x44388000 x44460000 x3f40300c}
+       {x44352000 x4445a000 x3f40701c}
+       {x44270000 x44440000 x3f3feffc}
+       {x4424e000 x44440000 x3f3d2f4c}
+       {x44314000 x44464000 x3f3caf2c}
+       {x444d4000 x44492000 x3f3e6f9c}
+       {x446a8000 x444aa000 x3f3e6f9c}
+       {x447c4000 x444ba000 x3f3eafac}
+       {x4482d000 x444c6000 x3f3eafac}
+       {x44809000 x444c6000 x3f3e2f8c}
+       {x44730000 x444be000 x3f21284a}
+       {x446c6000 x444b6000 x3f1f27ca}
+       {x446b4000 x444b4000 0}}}
+     {tx x448c2000 x444f6bd1 x444a217a}
+     {a ro 0 go 0 bo 0 ao 0 bs x42120000 bu 1 src 1 stx x40600000 sty xc2360000 str 1 spx x44700000 spy x44070000 sb 1 ltn x448c2000 ltm x448c2000 ltt x40000000 tt x41980000}}}}}}
+toolbox {clone {
+  { selectAll opc 0.1 bs 46.9 src 1 str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush bs 82 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1121 ltm 1121 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone opc 0.1 bs 46.9 src 1 stx -45.9 sty -21.8 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1121 ltm 1121 ltt 0 tt 19 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_opacity 0.1000000015
+toolbar_brush_size 46.90000153
+toolbar_brush_hardness 0.200000003
+toolbar_lifetime_start 1121
+toolbar_lifetime_end 1121
+toolbar_paint_source fg
+toolbar_source_transform_translate {-45.89996338 -21.79998779}
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {960 540}
+colorOverlay {0 0 0 0}
+paint_source foreground
+lifetime_start 1121
+lifetime_end 1121
+motionblur_on true
+brush_size 62.5
+brush_spacing 0.05000000075
+brush_hardness 0.200000003
+source_black_outside true
+name RotoPaint25
+selected true
+xpos 10190
+ypos -130
+}
+FrameHold {
+first_frame 1121
+name FrameHold12
+selected true
+xpos 10190
+ypos -16
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy10
+selected true
+xpos 10190
+ypos 296
+}
+Project3D2 {
+inputs 2
+name Project3D1
+selected true
+xpos 10190
+ypos 566
+}
+Card2 {
+control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+name Card2
+selected true
+xpos 10190
+ypos 662
+}
+push 0
+ScanlineRender {
+inputs 3
+conservative_shader_sampling false
+samples 10
+shutteroffset centred
+motion_vectors_type distance
+name ScanlineRender2
+selected true
+xpos 10190
+ypos 734
+}
+STMap {
+inputs 2
+name STMap2
+selected true
+xpos 10190
+ypos 1112
+}
+Premult {
+name Premult8
+selected true
+xpos 10190
+ypos 1574
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge2
+selected true
+xpos 10740
+ypos 1574
+disable true
+}
+push $Nf6c91500
+Merge2 {
+inputs 2
+name Merge54
+selected true
+xpos 11070
+ypos 1574
+}
+Dot {
+name Dot114
+selected true
+xpos 11104
+ypos 1818
+}
+set Nf699e000 [stack 0]
+Dot {
+name Dot116
+selected true
+xpos 10444
+ypos 1818
+}
+Project3D2 {
+inputs 2
+name Project3D2
+selected true
+xpos 10410
+ypos 1862
+}
+Card2 {
+control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+name Card3
+selected true
+xpos 10410
+ypos 1958
+}
+push 0
+ScanlineRender {
+inputs 3
+conservative_shader_sampling false
+shutteroffset centred
+motion_vectors_type distance
+name ScanlineRender3
+selected true
+xpos 10410
+ypos 2030
+}
+Dot {
+name Dot117
+label " Can check on Stabilized image"
+note_font "Verdana Bold Bold"
+note_font_size 21
+selected true
+xpos 10444
+ypos 2226
+}
+push $Nf699e000
+Dot {
+name Dot115
+label " Final"
+note_font "Verdana Bold Bold"
+note_font_size 21
+selected true
+xpos 11104
+ypos 2226
+}
+Dot {
+inputs 0
+name Dot118
+label " All `Frameholds` should be on the same frame"
+selected true
+xpos 10004
+ypos 522
+}
+Dot {
+inputs 0
+name Dot120
+label " All `Frameholds` should be on the same frame"
+selected true
+xpos 10224
+ypos -270
+}
+Dot {
+inputs 0
+name camDot2
+help "This is the Camera_Dot node.  Enter the name of your shot camera into the Camera Name field then click Connect2Camera.  A hidden connection will be instantly made to that shot camera.  Or you can rename your Camera node to MAIN_CAMERA and click the button to make the link.  Use these anywhere instead of using a Camera node."
+tile_color 0xff0000ff
+gl_color 0xff
+label "Camera: \[value camName]"
+note_font "DejaVu Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+note_font_size 12
+note_font_color 0xa10000ff
+selected true
+xpos 11324
+ypos 282
+hide_input true
+addUserKnob {20 User}
+addUserKnob {1 camName l "Camera Name : "}
+camName MAIN_CAMERA
+addUserKnob {22 Connect2Camera -STARTLINE T "n = nuke.thisNode()\ncamNameKnob = n\['camName'].value()\nprint camNameKnob\ntry:\n    nuke.exists (nuke.toNode(camNameKnob).name())\n    CAM = nuke.toNode(camNameKnob)\n    n.setInput(0,CAM)\nexcept:\n    nuke.message(\"%s missing or renamed\\n\\n check your main camera is connected to a node called %s\" % (camNameKnob, camNameKnob))\n\n\n"}
+}
+Dot {
+inputs 0
+name Dot119
+label " All `Frameholds` should be on the same frame"
+selected true
+xpos 10224
+ypos 2106
+}
